@@ -4,13 +4,13 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { format, parse, add, sub } from 'date-fns';
 import { setDates } from 'redux/date/dateSlice';
 import { selectDate } from 'redux/date/selectors';
-// import sprite from 'shared/icons/sprite.svg';
+import sprite from 'images/sprite.svg';
 
 import {
   Btn,
   Li,
   StyledDate,
-  WrapperPeriodPaginator,
+  PeriodPaginatorWrapper,
 } from './PeriodPaginator.styled';
 
 export const PeriodPaginator = ({ type }) => {
@@ -64,7 +64,7 @@ export const PeriodPaginator = ({ type }) => {
   const currentDate = format(date, 'dd MMMM yyyy');
 
   return (
-    <WrapperPeriodPaginator>
+    <PeriodPaginatorWrapper>
       <StyledDate>
         {type === 'month' ? currentDate.slice(3) : currentDate}
       </StyledDate>
@@ -77,16 +77,16 @@ export const PeriodPaginator = ({ type }) => {
             // disabled={shouldDisable}
           >
             <svg height={'10px'} width={'8px'}>
-              <use href={'<'} />
+              <use href={`${sprite}#icon-arrow-left-small`} />
             </svg>
           </Btn>
           <Btn type="button" name="addition" onClick={onChangeDate}>
             <svg height={'10px'} width={'8px'}>
-              <use href={'>'} />
+              <use href={`${sprite}#icon-arrow-right-small`} />
             </svg>
           </Btn>
         </Li>
       </ul>
-    </WrapperPeriodPaginator>
+    </PeriodPaginatorWrapper>
   );
 };

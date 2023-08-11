@@ -25,12 +25,12 @@ export const Btn = styled.button`
   align-items: center;
   width: 36px;
   border: 1px solid rgba(220, 227, 229, 0.5);
-  background-color: '#ffffff';
+  background-color: #ffffff;
   &:disabled {
-    background-color: '#ffffff';
+    background-color: #ffffff;
 
     & svg {
-      stroke: '#DCE3E5';
+      stroke: #dce3e5;
     }
   }
 
@@ -44,7 +44,7 @@ export const Btn = styled.button`
 
   & svg {
     fill: transparent;
-    stroke: '#616161';
+    stroke: #616161;
   }
   @media (min-width: 768px) {
     width: 38px;
