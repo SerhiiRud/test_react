@@ -1,13 +1,14 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://my-goosetrack.url';
+// UPDATE BACKEND URL!
+axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
 export const fetchTasks = createAsyncThunk(
-  'contacts/fetchAll',
-  async (_, thunkAPI) => {
+  'tasks/fetchMonth',
+  async ({ year, month }, thunkAPI) => {
     try {
-      const response = await axios.get('/tasks');
+      const response = await axios.get(`/tasks/?year=${year}&month=${month}`);
       return response.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);

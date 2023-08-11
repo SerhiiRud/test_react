@@ -13,12 +13,12 @@ const handleRejected = (state, action) => {
 const handleFetchTasks = (state, action) => {
   state.isLoading = false;
   state.error = null;
-  state.items = action.payload;
+  state.tasks = action.payload;
 };
 
 const tasksSlice = createSlice({
-  name: 'ctasks',
-  initialState: [],
+  name: 'tasks',
+  initialState: { tasksArray: [] },
 
   extraReducers: builder =>
     builder

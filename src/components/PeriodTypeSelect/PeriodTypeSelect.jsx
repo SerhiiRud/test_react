@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import { selectDate } from 'redux/date/selectors';
 import { ListItem, List, StyledNavLink } from './PeriodTypeSelect.styled';
 import { useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export const PeriodTypeSelect = ({ onChangeType }) => {
   const date = useSelector(selectDate);
@@ -32,4 +33,8 @@ export const PeriodTypeSelect = ({ onChangeType }) => {
       </ListItem>
     </List>
   );
+};
+
+PeriodTypeSelect.propTypes = {
+  onChangeType: PropTypes.func.isRequired,
 };

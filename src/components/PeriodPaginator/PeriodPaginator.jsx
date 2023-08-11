@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { format, parse, add, sub } from 'date-fns';
+import PropTypes from 'prop-types';
 import { setDates } from 'redux/date/dateSlice';
 import { selectDate } from 'redux/date/selectors';
 import sprite from 'images/sprite.svg';
@@ -89,4 +90,8 @@ export const PeriodPaginator = ({ type }) => {
       </ul>
     </PeriodPaginatorWrapper>
   );
+};
+
+PeriodPaginator.propTypes = {
+  type: PropTypes.string.isRequired,
 };
